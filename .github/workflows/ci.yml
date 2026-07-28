@@ -26,3 +26,6 @@ jobs:
       - name: Run Application Tests
         run: |
           python -c "import app; print('App module loaded successfully')"
+
+# SecureFlow AI Patch: dependency
+uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
