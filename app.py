@@ -4,6 +4,8 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+# DUMMY_TEST_SECRET = "ghp_1234567890abcdefghijklmnopqrstuvwxyz12345" # For Gitleaks secret scan testing
+
 @app.route('/')
 def home():
     return jsonify({
