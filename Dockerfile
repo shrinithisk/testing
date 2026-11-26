@@ -1,16 +1,14 @@
-FROM python:3.11-slim
+# Hadolint violations: unpinned latest tag, running as root
+FROM python:latest
 
 WORKDIR /app
 
-RUN useradd -m -u 1000 appuser
-
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
-USER appuser
-
 EXPOSE 5000
 
+# Runs as root user (no USER instruction)
 CMD ["python", "app.py"]

@@ -9,12 +9,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # Missing explicit least-privilege permissions block (Actionlint security flaw)
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        uses: actions/checkout@v2  # Actionlint: unpinned mutable tag
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v2  # Actionlint: unpinned mutable tag
         with:
           python-version: '3.11'
 
